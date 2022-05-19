@@ -12,7 +12,8 @@ class land():
         return 'length = ' +str(self.length) +' bredth = '+str(self.bredth)
 
     def __repr__(self):
-        return "l1 is object of class land  "
+        return "this is object of class land, "
 
 l1 = land(10,20,300)
+l2 = land.empty()
 print(repr(l1),l1)
