@@ -1,17 +1,16 @@
-import sqlite3 as sql
+# working of try()
+x = int(input("Enter the number: "))
+y = int(input("Enter the number: "))
 
-try:
-    con = sql.connect(database="banking.sqlite")
-    cur = con.cursor()
-    cur.execute(
-        "create table users(acn integer primary key autoincrement,name text,pass text,email text,mob text,bal int)")
-    con.commit()
-    con.close()
+def divide(x, y):
+	try:
+		# Floor Division : Gives only Fractional
+		result = x // y
+	except ZeroDivisionError:
+		print("Sorry ! You are dividing by zero ")
+	else:
+		print("Yeah ! Your answer is :", result)
+	finally:    
+		print('Program Completed')
 
-except sql.Error as error:
-    print("Exist")
-    
-finally:
-    if con:
-        con.close()
-        
+divide(x,y)
